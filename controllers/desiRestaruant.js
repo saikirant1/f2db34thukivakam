@@ -19,9 +19,26 @@ exports.desiRestaruant_detail = function(req, res) {
 }; 
  
 // Handle desiRestaruant create on POST. 
-exports.desiRestaruant_create_post = function(req, res) { 
-    res.send('NOT IMPLEMENTED: desiRestaruant create POST'); 
+exports.desiRestaruant_create_post = async function(req, res) { 
+    console.log(req.body) 
+    let document = new desiRestaruant(); 
+    // We are looking for a body, since POST does not have query parameters. 
+    // Even though bodies can be in many different formats, we will be picky 
+    // and require that it be a json object 
+    // {"desiRestaruant_type":"goat", "cost":12, "size":"large"} 
+    document.desiRestaruantRating = req.body.desiRestaruantRating; 
+    document.desiRestaruantCost = req.body.desiRestaruantCost; 
+    document.desiRestaruantLocation = req.body.desiRestaruantLocation; 
+    try{ 
+        let result = await document.save(); 
+        res.send(result); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
 }; 
+ 
  
 // Handle desiRestaruant delete form on DELETE. 
 exports.desiRestaruant_delete = function(req, res) { 
