@@ -13,18 +13,19 @@ router.get('/', api_controller.api);
 /// desiRestaruant ROUTES /// 
  
 // POST request for creating a desiRestaruant.  
-router.post('/desiRestaruants', desiRestaruant_controller.desiRestaruant_create_post); 
+router.post('/desiRestaruant', desiRestaruant_controller.desiRestaruant_create_post); 
  
 // DELETE request to delete desiRestaruant. 
-router.delete('/desiRestaruants/:id', desiRestaruant_controller.desiRestaruant_delete); 
+router.delete('/desiRestaruant/:id', desiRestaruant_controller.desiRestaruant_delete); 
  
 // PUT request to update desiRestaruant. 
-router.put('/desiRestaruants/:id', desiRestaruant_controller.desiRestaruant_update_put); 
+router.put('/desiRestaruant/:id', desiRestaruant_controller.desiRestaruant_update_put); 
  
 // GET request for one desiRestaruant. 
-router.get('/desiRestaruants/:id', desiRestaruant_controller.desiRestaruant_detail); 
+router.get('/desiRestaruant/:id', desiRestaruant_controller.desiRestaruant_detail); 
  
 // GET request for list of all desiRestaruant items. 
-router.get('/desiRestaruants', desiRestaruant_controller.desiRestaruant_list); 
+router.get('/desiRestaruant', desiRestaruant_controller.desiRestaruant_list); 
  
-module.exports = router; 
+module.exports = router;
+ 

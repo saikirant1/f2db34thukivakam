@@ -4,8 +4,8 @@ block content
   - let results = [{desiRestaruantRating:9.0 , desiRestaruantCost:400.00, desiRestaruantLocation: "texas"},{desiRestaruantRating:6.00 , desiRestaruantCost:700.00, desiRestaruantLocation:"california"},{desiRestaruantRating:7.00 , desiRestaruantCost:100.00, desiRestaruantLocation:"charlotte"}]
   div(class="container-fluid mt-3")
   div(class="row")
-    each temp,index in results
-        div(class="col-sm-2" onclick=`buy(${index})`)  #{temp.desiRestaruantRating} -  #{temp.desiRestaruantCost} - #{temp.desiRestaruantLocation}
+    each result,index in results
+        div(class="col-sm-2" onclick=`buy(${index})`)  #{result.desiRestaruantRating} -  #{result.desiRestaruantCost} - #{result.desiRestaruantLocation}
   br
   div(class="container-fluid")
     div(class="row")
