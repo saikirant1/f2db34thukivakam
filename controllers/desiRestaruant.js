@@ -1,8 +1,16 @@
 var desiRestaruant = require('../models/desiRestaruant'); 
  
 // List of all desiRestaruants 
-exports.desiRestaruant_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: desiRestaruant list'); 
+// List of all desiRestaruant
+exports.desiRestaruant_list = async function(req, res) { 
+    try{ 
+        thedesiRestaruant = await desiRestaruant.find(); 
+        res.send(thedesiRestaruant); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
 }; 
  
 // for a specific desiRestaruant. 
