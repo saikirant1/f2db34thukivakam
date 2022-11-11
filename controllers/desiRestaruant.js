@@ -53,8 +53,24 @@ exports.desiRestaruant_delete = function(req, res) {
 }; 
  
 // Handle desiRestaruant update form on PUT. 
-exports.desiRestaruant_update_put = function(req, res) { 
-    res.send('NOT IMPLEMENTED: desiRestaruant update PUT' + req.params.id); 
+exports.desiRestaruant_update_put = async function(req, res) { 
+    console.log(`update on id ${req.params.id} with body 
+${JSON.stringify(req.body)}`) 
+    try { 
+        let toUpdate = await desiRestaruant.findById( req.params.id) 
+        // Do updates of properties 
+        if(req.body.desiRestaruantRating)  
+               toUpdate.desiRestaruantRating = req.body.desiRestaruantRating; 
+        if(req.body.desiRestaruantCost) toUpdate.desiRestaruantCost = req.body.desiRestaruantCost; 
+        if(req.body.desiRestaruantLocation) toUpdate.desiRestaruantLocation = req.body.desiRestaruantLocation; 
+        let result = await toUpdate.save(); 
+        console.log("Sucess " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": ${err}: Update for id ${req.params.id} 
+failed`); 
+    } 
 }; 
 
 // VIEWS 
