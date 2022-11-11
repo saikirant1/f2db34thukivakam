@@ -8,9 +8,10 @@
 
 // module.exports = router;
 var express = require('express'); 
-const desiRestaruant_controlers= require('../controllers/desiRestaruant'); 
+const desiRestaruant_controllers= require('../controllers/desiRestaruant'); 
 var router = express.Router(); 
  
 /* GET desiRestaruant */ 
-router.get('/', desiRestaruant_controlers.desiRestaruant_view_all_Page ); 
+router.get('/', desiRestaruant_controllers.desiRestaruant_view_all_Page ); 
+router.get('/desiRestaruant/:id', desiRestaruant_controllers.desiRestaruant_detail); 
 module.exports = router; 
