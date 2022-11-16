@@ -16,4 +16,6 @@ router.get('/', desiRestaruant_controllers.desiRestaruant_view_all_Page );
 router.get('/desiRestaruant/:id', desiRestaruant_controllers.desiRestaruant_detail); 
 /* GET detail desiRestaruant page */ 
 router.get('/detail', desiRestaruant_controllers.desiRestaruant_view_one_Page); 
+/* GET create desiRestaruant page */ 
+router.get('/create', desiRestaruant_controllers.desiRestaruant_create_Page); 
 module.exports = router; 
