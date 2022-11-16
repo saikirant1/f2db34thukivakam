@@ -93,3 +93,17 @@ exports.desiRestaruant_view_all_Page = async function(req, res) {
         res.send(`{"error": ${err}}`); 
     }   
 }; 
+
+// Handle a show one view with id specified by query 
+exports.desiRestaruant_view_one_Page = async function(req, res) { 
+    console.log("single view for id "  + req.query.id) 
+    try{ 
+        result = await desiRestaruant.findById( req.query.id) 
+        res.render('desiRestaruantdetail',  
+{ title: 'desiRestaruant Detail', toShow: result }); 
+    } 
+    catch(err){ 
+        res.status(500) 
+        res.send(`{'error': '${err}'}`); 
+    } 
+}; 

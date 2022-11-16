@@ -1,0 +1,22 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let desiRestaruantid = toShow._id 
+  - let desiRestaruantRating = toShow.desiRestaruantRating
+  - let desiRestaruantCost = toShow.desiRestaruantCost
+  - let desiRestaruantLocation = toShow.desiRestaruantLocation
+  div 
+    div.row 
+      div(class='desiRestaruantAttr mr-3') desiRestaruant ID is: 
+      div #{desiRestaruantid} 
+    div.row 
+      div(class='desiRestaruantAttr mr-3') desiRestaruant Type is: 
+      div #{desiRestaruantRating} 
+    div.row 
+      div(class='desiRestaruantAttr mr-3') desiRestaruant Size is: 
+      div #{desiRestaruantCost} 
+    div.row 
+      div(class='desiRestaruantAttr mr-3') desiRestaruant Cost is: 
+      div #{desiRestaruantLocation} 
