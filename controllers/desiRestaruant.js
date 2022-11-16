@@ -121,3 +121,16 @@ exports.desiRestaruant_create_Page =  function(req, res) {
         res.send(`{'error': '${err}'}`); 
     } 
 }; 
+// Handle building the view for updating a desiRestaruant. 
+// query provides the id 
+exports.desiRestaruant_update_Page =  async function(req, res) { 
+    console.log("update view for item "+req.query.id) 
+    try{ 
+        let result = await desiRestaruant.findById(req.query.id) 
+        res.render('desiRestaruantupdate', { title: 'desiRestaruant Update', toShow: result }); 
+    } 
+    catch(err){ 
+        res.status(500) 
+        res.send(`{'error': '${err}'}`); 
+    } 
+}; 
