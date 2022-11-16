@@ -48,8 +48,16 @@ exports.desiRestaruant_create_post = async function(req, res) {
  
  
 // Handle desiRestaruant delete form on DELETE. 
-exports.desiRestaruant_delete = function(req, res) { 
-    res.send('NOT IMPLEMENTED: desiRestaruant delete DELETE ' + req.params.id); 
+exports.desiRestaruant_delete = async function(req, res) { 
+    console.log("delete "  + req.params.id) 
+    try { 
+        result = await desiRestaruant.findByIdAndDelete( req.params.id) 
+        console.log("Removed " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": Error deleting ${err}}`); 
+    } 
 }; 
  
 // Handle desiRestaruant update form on PUT. 
