@@ -85,8 +85,8 @@ failed`);
 // Handle a show all view 
 exports.desiRestaruant_view_all_Page = async function(req, res) { 
     try{ 
-        thedesiRestaruant = await desiRestaruant.find(); 
-        res.render('desiRestaruant', { title: 'desiRestaruant Search Results', results: thedesiRestaruant }); 
+        result = await desiRestaruant.find(); 
+        res.render('desiRestaruant', { title: 'desiRestaruant Search Results', results: result }); 
     } 
     catch(err){ 
         res.status(500); 
