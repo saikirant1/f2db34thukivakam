@@ -105,21 +105,21 @@ async function recreateDB(){
   await desiRestaruant.deleteMany(); 
  
   let instance1 = new 
-  desiRestaruant({desiRestaruantRating:9.0 , desiRestaruantCost:400.00, desiRestaruantLocation: "texas"}); 
+  desiRestaruant({desiRestaruantRating:9 , desiRestaruantCost:400, desiRestaruantLocation: "texas"}); 
   instance1.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("First object saved") 
   }); 
 
   let instance2 = new 
-  desiRestaruant({desiRestaruantRating:6.00 , desiRestaruantCost:700.00, desiRestaruantLocation:"california"}); 
+  desiRestaruant({desiRestaruantRating:6 , desiRestaruantCost:700, desiRestaruantLocation:"california"}); 
   instance2.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Second object saved") 
   }); 
 
   let instance3 = new 
-  desiRestaruant({desiRestaruantRating:7.00 , desiRestaruantCost:100.00, desiRestaruantLocation:"charlotte"}); 
+  desiRestaruant({desiRestaruantRating:7 , desiRestaruantCost:100, desiRestaruantLocation:"charlotte"}); 
   instance3.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Third object saved") 
