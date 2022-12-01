@@ -2,12 +2,15 @@ extends layout
 block content
   h1= title
   - let results = result;
+  a(class="btn btn-success" href="/desiRestaruant/create") Create
   div(class="container-fluid mt-3")
   div(class="row m-1")
     each result,index in results
       - let destination = `dispatch(\"/desiRestaruant/update?id=${result._id}\")`
       div(class="col-sm-2" onclick=`buy(${index})`)  #{result.desiRestaruantRating} -  #{result.desiRestaruantCost} - #{result.desiRestaruantLocation}
         button.btn( class="btn-primary ml-1", onclick= destination) Update
+        a(class="btn btn-danger" href=`/desiRestaruant/delete?id=${result._id}`) Delete
+        a(class="btn btn-dark" href=`/desiRestaruant/detail?id=${result._id}`) Details
   br
   div(class="container-fluid")
     div(class="row")
